@@ -7,7 +7,7 @@ const ShowsState = (props) => {
   const initialState = {
     shows: [],
     loading: false,
-    singleShow: {}
+    singleShow: null,
   }
   const [ state, dispatch ] = useReducer(showsReducer, initialState);
 

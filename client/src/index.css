@@ -184,13 +184,61 @@ body {
   color: var(--text-color);
   padding: 0.5em;
 }
+
+/* Homepage Style */
 .homepage-list {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   padding: 0.5em;
   list-style: none;
-
   border-top: 1px solid var(--lightgray-color);
+
+}
+
+/* Single Show Page Style */
+
+.single-show {
+  display: flex;
+  margin: 2em 0;
+}
+
+.single-show-image {
+  margin-right: 2em;
+
+}
+
+.single-show-info > p{
+  margin: 0.7em 0;
+}
+
+.single-show-genre {
+  display: inline-block;
+  border-radius: 15px;
+  padding: 0.5em 0.7em;
+  background: var(--secondary-color);
+  color: var(--lightgray-color);
+}
+
+.single-show-episode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-top: 0.7em;
+  border-radius: 15px;
+  padding: 0.5em 0.7em;
+  background: var(--secondary-color);
+  color: var(--lightgray-color);
+
+}
+
+.single-show-episode-image {
+
+
+
+}
+
+.single-show-episode-title{
 
 }

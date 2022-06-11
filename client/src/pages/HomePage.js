@@ -21,6 +21,7 @@ const HomePage = () => {
           image={item.show.image ? item.show.image.medium : 'https://via.placeholder.com/210x295'}
           name={item.show.name}
           rating={item.show.rating.average ? item.show.rating.average : '-'}
+
           />
         ))}
       </div>

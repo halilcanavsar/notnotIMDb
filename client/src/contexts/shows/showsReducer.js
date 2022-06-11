@@ -22,7 +22,7 @@ const showsReducer = (state, action) => {
     case CLEAR_SINGLE_SHOW:
       return {
         ...state,
-        singleShow: {}
+        singleShow: null,
       }
     default:
       return state;
