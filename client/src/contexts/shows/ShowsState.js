@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 import showsReducer from './showsReducer';
 import showsContext from './showsContext';
-import { SEARCH_SHOWS, SET_LOADING, SET_SINGLE_SHOW, CLEAR_SINGLE_SHOW } from '../types';
+import { SEARCH_SHOWS, SET_LOADING, SET_SINGLE_SHOW, CLEAR_SINGLE_SHOW } from './types';
 
 const ShowsState = (props) => {
   const initialState = {
@@ -15,7 +15,7 @@ const ShowsState = (props) => {
     setLoading();
     const res = await fetch(`https://api.tvmaze.com/search/shows?q=${searchTerm}`);
     const data = await res.json();
-
+    console.log(data)
     dispatch({
       type: SEARCH_SHOWS,
       payload: data

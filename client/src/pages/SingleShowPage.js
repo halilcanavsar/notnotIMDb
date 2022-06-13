@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ShowsContext from '../contexts/shows/showsContext';
 
 const SinglePage = () => {
-  const { setSingleShow, singleShow, loading } = useContext(ShowsContext);
+  const { setSingleShow, singleShow } = useContext(ShowsContext);
   const { id } = useParams();
 
   useEffect(() => {

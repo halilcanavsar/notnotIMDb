@@ -1,13 +1,21 @@
 const connectionFunc = require('./db')
 const express = require('express');
 const cors = require('cors')
+const dotenv = require('dotenv')
 const app = express();
-const router = require('./router');
+const authRoute = require('./routes/auth')
+const usersRoute = require('./routes/users')
+
+dotenv.config();
+
+
 const PORT = 3003;
 
 app.use(cors())
 app.use(express.json());
-app.use(router);
+
+app.use('/api/auth', authRoute);
+app.use('/api/users', usersRoute);
 
 
 (async () => {
