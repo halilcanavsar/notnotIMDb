@@ -222,8 +222,7 @@ body {
 
 .single-show-episode {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+
 
   margin-top: 0.7em;
   border-radius: 15px;
@@ -234,7 +233,11 @@ body {
 }
 
 .single-show-episode-image {
+  margin-right: 0.7em;
 
+}
+.single-show-episode-info{
+align-self: space-between;
 
 
 }
