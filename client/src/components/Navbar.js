@@ -8,7 +8,7 @@ const Navbar = () => {
         <nav className="navbar-nav">
           <h3 className="navbar-header">
             <Link to="/">
-              <i class="fa-solid fa-clapperboard"></i>!notIMDb
+              <i className="fa-solid fa-clapperboard"></i>!notIMDb
             </Link>
           </h3>
           <ul className="navbar-links">
@@ -17,6 +17,12 @@ const Navbar = () => {
             </li>
             <li className="navbar-links-link">
               <Link to="/lists">My Lists</Link>
+            </li>
+            <li className="navbar-links-link login-link">
+              <Link to="/login">Login</Link>
+            </li>
+            <li className="navbar-links-link signup-link">
+              <Link to="/register">Sign Up</Link>
             </li>
           </ul>
         </nav>

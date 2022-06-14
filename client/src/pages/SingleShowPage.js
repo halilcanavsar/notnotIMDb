@@ -1,14 +1,17 @@
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ShowsContext from '../contexts/shows/showsContext';
+import WatchedContext from '../contexts/watched/watchedContext';
 
-const SinglePage = () => {
+const SinglePage = (props) => {
   const { setSingleShow, singleShow } = useContext(ShowsContext);
+  const { addWatchedList, removeWatchedList, watched } =
+    useContext(WatchedContext);
   const { id } = useParams();
 
   useEffect(() => {
     setSingleShow(id);
-  }, []);
+  }, [id]);
 
   const removeTags = (text) => {
     if (text === null || text === '') {
@@ -19,7 +22,9 @@ const SinglePage = () => {
     return text.replace(/<[^>]*>/g, '');
   };
 
-
+  const handleClick = (id) => {
+    addWatchedList(id);
+  };
 
   return (
     <>
@@ -60,6 +65,7 @@ const SinglePage = () => {
                   href={singleShow.officialSite}
                   target="_blank"
                   rel="noreferrer"
+                  className="single-show-link"
                 >
                   {singleShow.officialSite}
                 </a>
@@ -91,16 +97,27 @@ const SinglePage = () => {
                         {episode.name}: {removeTags(episode.summary)}
                       </div>
 
-
-
                       <div className="single-show-episode-rating">
-
                         Rating: {episode.rating ? episode.rating.average : '-'}
                       </div>
 
                       <p className="single-show-episode-season-episode">
                         Season: {episode.season} Episode: {episode.number}
                       </p>
+
+                      {watched.includes(episode.id) ? (
+                        <p className="remove-button">
+                          <button onClick={() => removeWatchedList(episode.id)}>
+                            Remove
+                          </button>
+                        </p>
+                      ) : (
+                        <p className="watched-button">
+                          <button onClick={() => handleClick(episode.id)}>
+                            Watched
+                          </button>
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}

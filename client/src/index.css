@@ -88,6 +88,13 @@ body {
   border-bottom: 1px solid var(--secondary-color);
 }
 
+.login-link {
+
+}
+.signup-link {
+
+}
+
 /* Searchbar Styles */
 
 .searchbar {
@@ -207,9 +214,17 @@ body {
   margin-right: 2em;
 
 }
+.single-show-name {
+  color: var(--lightgray-color);
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: underline;
+
+}
 
 .single-show-info > p{
   margin: 0.7em 0;
+  color: var(--lightgray-color);
 }
 
 .single-show-genre {
@@ -242,6 +257,139 @@ align-self: space-between;
 
 }
 
-.single-show-episode-title{
+.single-show-link{
+text-decoration: underline;
+color: var(--lightgray-color);
+}
+
+/* Register Page Styles */
+
+.register {
+
+
+
+  background-size: cover;
+  position: relative;
+}
+
+.register-top {
+
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.register-button {
+  background-color: var(--text-color);
+        border: none;
+        color: white;
+        border-radius: 5px;
+        padding: 5px 15px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
 
 }
+
+.register-email-input > input {
+      width: 100%;
+      border: none;
+      padding: 30px;
+      border-radius: 5px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+}
+.register-email-input {
+  width: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.register-button {
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--text-color);
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Login Page Styles */
+
+.login {
+
+  background-size: cover;
+  position: relative;
+}
+
+.login-top {
+
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-container {
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.login-container > form {
+  width: 300px;
+      height: 300px;
+      padding: 30px;
+      border-radius: 5px;
+      background-color: var(--main-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+}
+.login-container > form > input {
+  height: 40px;
+  border-radius: 5px;
+  background-color: white;
+  padding-left: 10px;
+}
+.login-container > form > button {
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--text-color);
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+

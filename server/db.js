@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 
 
+
 const connectionFunc = async function () {
-  return mongoose.connect('mongodb://localhost:27017/Users');
+  return mongoose.connect(process.env.DB_CONNECTION, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    });
 }
 
 

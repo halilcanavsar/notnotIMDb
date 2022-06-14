@@ -64,4 +64,43 @@ const getAllUsers = async (req, res) => {
     }
   }
 
+const addWatchedList = async (req, res) => {
+  if (req.user.id === req.params.id || req.user.isAdmin) {
+    try {
+      const user = await User.findByIdAndUpdate(req.params.id, {
+        $push: {
+          watchedList: req.body.movieId,
+        },
+      }, {
+        new: true,
+      });
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  } else {
+    res.status(403).json({ message: 'Unauthorized' });
+  }
+}
+
+const removeWatchedList = (req, res) => {
+  if (req.user.id === req.params.id || req.user.isAdmin) {
+    try {
+      const user = User.findByIdAndUpdate(req.params.id, {
+        $pull: {
+          watchedList: req.body.movieId,
+        },
+      }, {
+        new: true,
+      });
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  } else {
+    res.status(403).json({ message: 'Unauthorized' });
+  }
+}
+
+
 module.exports = { updateUser, deleteUser, getUser, getAllUsers };

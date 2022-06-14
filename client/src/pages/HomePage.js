@@ -6,6 +6,9 @@ import Searchbar from '../components/Searchbar';
 import ListItem from '../components/ListItem';
 
 
+
+
+
 const HomePage = () => {
   const showsContext = useContext(ShowsContext);
   const { shows, loading } = showsContext;
@@ -25,6 +28,8 @@ const HomePage = () => {
           />
         ))}
       </div>
+
+
     </div>
   );
 };
