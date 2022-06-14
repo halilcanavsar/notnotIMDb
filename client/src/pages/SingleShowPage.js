@@ -1,12 +1,16 @@
-import { useEffect, useContext, useState } from 'react';
+import { useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import ShowsContext from '../contexts/shows/showsContext';
 import WatchedContext from '../contexts/watched/watchedContext';
+import FavoriteContext from '../contexts/favorite/favoriteContext';
 
 const SinglePage = (props) => {
   const { setSingleShow, singleShow } = useContext(ShowsContext);
   const { addWatchedList, removeWatchedList, watched } =
     useContext(WatchedContext);
+  const { addFavoriteList, removeFavoriteList, favorite } =
+    useContext(FavoriteContext);
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -26,6 +30,10 @@ const SinglePage = (props) => {
     addWatchedList(id);
   };
 
+  const handleClick2 = (id) => {
+    addFavoriteList(id);
+  }
+
   return (
     <>
       {singleShow && (
@@ -41,7 +49,24 @@ const SinglePage = (props) => {
             />
           </div>
           <div className="single-show-info">
-            <h3 className="single-show-name">{singleShow.name}</h3>
+            <h3 className="single-show-name">{singleShow.name}
+
+            {favorite.includes(singleShow.id) ? (
+                        <p >
+                          <button className="favorite" onClick={() => removeFavoriteList(singleShow.id)}>
+                            Remove
+                          </button>
+                        </p>
+                      ) : (
+                        <p >
+                          <button className="favorite" onClick={() => handleClick2(singleShow.id)}>
+                            Favorite
+                          </button>
+                        </p>
+                      )}
+
+
+            </h3>
             {singleShow.genres &&
               singleShow.genres.map((genres) => (
                 <p key={genres} className="single-show-genre">

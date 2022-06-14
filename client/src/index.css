@@ -221,6 +221,16 @@ body {
   text-decoration: underline;
 
 }
+.favorite {
+
+  background-color: var(--text-color);
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2em;
+  padding: 0.5em;
+  margin-left: 88%;
+
+}
 
 .single-show-info > p{
   margin: 0.7em 0;

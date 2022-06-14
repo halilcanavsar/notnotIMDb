@@ -19,14 +19,14 @@ import Login from './pages/Login';
 
 import ShowsState from './contexts/shows/ShowsState';
 import WatchedState from './contexts/watched/WatchedState';
-
+import FavoriteState from './contexts/favorite/FavoriteState';
 
 const App = () => {
   const { user } = useContext(authContext);
   return (
     <ShowsState>
       <WatchedState>
-
+        <FavoriteState>
       <Router>
         <Navbar />
         <div className="container">
@@ -43,6 +43,7 @@ const App = () => {
           </Routes>
         </div>
       </Router>
+      </FavoriteState>
       </WatchedState>
     </ShowsState>
   );

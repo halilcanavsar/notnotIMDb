@@ -15,7 +15,6 @@ const ShowsState = (props) => {
     setLoading();
     const res = await fetch(`https://api.tvmaze.com/search/shows?q=${searchTerm}`);
     const data = await res.json();
-    console.log(data)
     dispatch({
       type: SEARCH_SHOWS,
       payload: data
@@ -34,7 +33,6 @@ const ShowsState = (props) => {
     setLoading();
     const res = await fetch(`https://api.tvmaze.com/shows/${id}?embed[]=episodes&embed[]=seasons`);
     const data = await res.json();
-    console.log(data);
 
     dispatch({
       type: SET_SINGLE_SHOW,
